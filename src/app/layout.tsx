@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +28,30 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <nav className="fixed top-0 left-0 right-0 bg-white/50 backdrop-blur-md border-b border-gray-200 z-50">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex space-x-4">
+                <Link
+                  href="/"
+                  className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  AI Chat
+                </Link>
+                <Link
+                  href="/speech-to-text"
+                  className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Speech to Text
+                </Link>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <main className="pt-16 min-h-screen">
+          {children}
+        </main>
       </body>
     </html>
   );
