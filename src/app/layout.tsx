@@ -44,6 +44,12 @@ export default function RootLayout({
                 >
                   Speech to Text
                 </Link>
+                <Link
+                  href="/train-model"
+                  className="text-gray-700 hover:text-black px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Retrieval-Augmented Generation
+                </Link>
               </div>
             </div>
           </div>
